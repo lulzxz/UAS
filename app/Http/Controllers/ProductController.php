@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Resources\ProductCollection;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -14,12 +13,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $Product = new ProductCollection(Product::paginate(5));
-        return Inertia::render('Homepage', [
-            'title' => 'Naokids',
-            'description' => 'NaoKids',
-            'product' => $Product
-
+       $products = new ProductCollection(Product::paginate((9)));
+       return Inertia::render('Homepage', [
+        'title' => "NaoKids",
+        'description' => "Naokods",
+        'products' => $products,
         ]);
     }
 
@@ -71,3 +69,5 @@ class ProductController extends Controller
         //
     }
 }
+
+
