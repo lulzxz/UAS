@@ -20,6 +20,7 @@
         "vite": "^4.3.8"
     },
     "dependencies": {
-        "daisyui": "^2.51.6"
+        "daisyui": "^2.51.6",
+        "react-router-dom": "^6.11.2"
     }
 }
