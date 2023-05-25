@@ -16,7 +16,7 @@ class ProductController extends Controller
        $products = new ProductCollection(Product::paginate((9)));
        return Inertia::render('Homepage', [
         'title' => "NaoKids",
-        'description' => "Naokods",
+        'description' => "NaoKids",
         'products' => $products,
         ]);
     }
