@@ -1,3 +1,5 @@
+import { Link } from "@inertiajs/react"
+
 const isProduct = (products) => {
     return products.map((data, i) => {
         return <div key={i} className="card w-full lg:w-96 bg-base-100 shadow-xl">
@@ -9,8 +11,8 @@ const isProduct = (products) => {
                 </h2>
                 <p>{data.description}</p>
                 <div className="card-actions justify-end">
-                    <div className="badge badge-inline">{data.price}</div>
-                    <div className="badge badge-outline">Products</div>
+                    <div className="badge badge-inline">${data.price}</div>
+                    <Link href="/Cart" className="badge badge-outline" as="button">Pre-Order</Link>
                 </div>
             </div>
         </div>

@@ -10,8 +10,8 @@ const Navbar = ({user}) => {
                 </button>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52 text-black hover:text-stone-800">
                     <li><Link href={"/"}>Home</Link></li>
-                    <li><Link href={"/Products"}>Category</Link></li>
-                    <li><Link href={'/Homepage'}>About</Link></li>
+                    <li><Link href={"/Product"}>Category</Link></li>
+                    <li><Link href={'/'}>About</Link></li>
                 </ul>
                 </div>
             </div>
