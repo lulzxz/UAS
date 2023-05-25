@@ -1,8 +1,26 @@
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos <= 150) {
+        document.querySelector("#navbar").classList.remove('scroll');
+    }
+    else {
+        document.querySelector("#navbar").classList.add('scroll');
+    }
+
+    prevScrollpos = currentScrollPos;
+}
+
 
 const Navbar = ({user}) => {
+
+
     return (
+
         <div className="navbar bg-base-100 fixed z-50 bg-transparent" id="navbar">
+        <Head title="NaoKids"/>
             <div className="flex-none">
                 <div className="dropdown">
                 <button className="btn btn-square btn-ghost">
@@ -10,13 +28,13 @@ const Navbar = ({user}) => {
                 </button>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52 text-black hover:text-stone-800">
                     <li><Link href={"/"}>Home</Link></li>
-                    <li><Link href={"/Product"}>Category</Link></li>
-                    <li><Link href={'/'}>About</Link></li>
+                    <li><Link href={"/products"}>Shop</Link></li>
+                    <li><Link href={'/Homepage'}>About</Link></li>
                 </ul>
                 </div>
             </div>
             <div className="flex-1">
-                <a className="btn btn-ghost normal-case text-xl">NaoKids</a>
+                <a className="btn btn-ghost normal-case text-xl">Naokids</a>
             </div>
             <div className="flex-none">
             <div className="dropdown dropdown-end">
